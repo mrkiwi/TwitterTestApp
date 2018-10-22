@@ -25,7 +25,7 @@ public class TweetAdapter extends BaseQuickAdapter<TweetDH, TweetVH> {
         helper.bindData(mContext, item);
         helper.getView(R.id.iv_favorite).setOnClickListener(view -> {
             item.isFavorite = !item.isFavorite;
-            helper.toggleFavorite(mContext, item.isFavorite);
+            helper.toggleFavorite(item.isFavorite);
             listener.handleFavorite(item, item.isFavorite, helper.getAdapterPosition());
         });
         helper.setEntityListener((AutoLinkMode autoLinkMode, String matchedText) -> {

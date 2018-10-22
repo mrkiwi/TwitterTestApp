@@ -13,8 +13,6 @@ import com.test.twitter.presentation.screens.main.favorites.FavoritesFragment;
 import com.test.twitter.presentation.screens.main.nearby.NearbyFragment;
 import com.test.twitter.presentation.screens.main.search.SearchFragment;
 
-import javax.inject.Inject;
-
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View, NavigationView.OnNavigationItemSelectedListener {
@@ -23,7 +21,6 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     DrawerLayout drawerLayout;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
-
 
     @Override
     protected int getLayoutRes() {
@@ -51,12 +48,6 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void initUtils() {
-        super.initUtils();
-        navigator.bind(getSupportFragmentManager(), R.id.content_frame);
     }
 
     @Override

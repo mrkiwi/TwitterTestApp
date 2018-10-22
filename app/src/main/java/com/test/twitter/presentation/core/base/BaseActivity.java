@@ -24,7 +24,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends DaggerAppCom
     @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-
     @Inject
     protected Navigator navigator;
 
@@ -54,12 +53,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends DaggerAppCom
     protected void onDestroy() {
         if (mUnbinder != null) mUnbinder.unbind();
         if (presenter != null) presenter.unsubscribe();
+        if(navigator != null) navigator.unbind();
         super.onDestroy();
     }
 
 
     @CallSuper
     protected void initUtils() {
+        navigator.bind(getSupportFragmentManager(), R.id.content_frame);
     }
 
     protected abstract void initUI();

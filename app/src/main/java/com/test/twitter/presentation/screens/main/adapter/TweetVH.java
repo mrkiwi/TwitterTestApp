@@ -49,14 +49,11 @@ public class TweetVH extends BaseViewHolder {
                 .load(data.avatar)
                 .into(civAuthorAvatar);
 
-        toggleFavorite(context, data.isFavorite);
+        toggleFavorite(data.isFavorite);
     }
 
-    public void toggleFavorite(Context context, boolean isFavorite) {
-        int favoriteRes = isFavorite ? R.drawable.ic_favorite_active : R.drawable.ic_favorite;
-        Glide.with(context)
-                .load(context.getResources().getDrawable(favoriteRes))
-                .into(ivFavorite);
+    public void toggleFavorite(boolean isFavorite) {
+        ivFavorite.setImageResource(isFavorite ? R.drawable.ic_favorite_active : R.drawable.ic_favorite);
     }
 
     public void setEntityListener(AutoLinkOnClickListener listener) {

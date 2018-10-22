@@ -19,7 +19,7 @@ public class SearchPresenter extends BasePresenterImpl<SearchContract.View> impl
     private SearchRequest request;
 
     @Inject
-    public SearchPresenter(SearchContract.View view, SearchContract.Model model) {
+    SearchPresenter(SearchContract.View view, SearchContract.Model model) {
         super(view);
         this.model = model;
         this.request = new SearchRequest();

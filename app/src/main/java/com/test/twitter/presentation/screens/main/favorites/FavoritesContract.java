@@ -25,7 +25,6 @@ public interface FavoritesContract {
     }
 
     class Model {
-
         @Inject
         GetFavoritesUseCase getFavoritesUseCase;
 
@@ -43,6 +42,7 @@ public interface FavoritesContract {
         protected View provideView(FavoritesFragment searchFragment) {
             return searchFragment;
         }
+
         @Provides
         protected Presenter providePresenter(View view, Model model) {
             return new FavoritesPresenter(view, model);

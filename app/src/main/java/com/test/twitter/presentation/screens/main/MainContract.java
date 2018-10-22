@@ -15,13 +15,12 @@ public interface MainContract {
     interface View extends BaseView {
         void loadSearchFragment();
     }
-    interface Presenter extends BasePresenter {
-    }
+    interface Presenter extends BasePresenter { }
 
     class Model {
-
         @Inject
         AuthenticateUseCase authenticateUseCase;
+
         @Inject
         PreferencesManager preferencesManager;
 

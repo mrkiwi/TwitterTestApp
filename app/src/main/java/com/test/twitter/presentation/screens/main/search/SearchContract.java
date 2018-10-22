@@ -1,5 +1,6 @@
 package com.test.twitter.presentation.screens.main.search;
 
+
 import android.support.v7.widget.SearchView;
 
 import com.test.twitter.domain.usecase.SearchUseCase;
@@ -34,7 +35,6 @@ public interface SearchContract {
     }
 
     class Model {
-
         @Inject
         SearchUseCase searchUseCase;
 
@@ -45,8 +45,7 @@ public interface SearchContract {
         RemoveFavoriteUseCase removeFavoriteUseCase;
 
         @Inject
-        public Model() {
-        }
+        public Model() {}
     }
 
     @Module
@@ -55,6 +54,7 @@ public interface SearchContract {
         protected View provideView(SearchFragment searchFragment) {
             return searchFragment;
         }
+
         @Provides
         protected Presenter providePresenter(View view, Model model) {
             return new SearchPresenter(view, model);

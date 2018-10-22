@@ -34,7 +34,6 @@ public interface NearbyContract {
     }
 
     class Model {
-
         @Inject
         SearchUseCase searchUseCase;
 
@@ -55,6 +54,7 @@ public interface NearbyContract {
         protected View provideView(NearbyFragment searchFragment) {
             return searchFragment;
         }
+
         @Provides
         protected Presenter providePresenter(View view, Model model) {
             return new NearbyPresenter(view, model);
