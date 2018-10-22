@@ -1,0 +1,46 @@
+rootProject.ext {
+    buildToolsVersion = '28.0.3'
+    compileSdkVersion = 27
+    applicationId = "com.test.twitter"
+    minSdkVersion = 21
+    targetSdkVersion = 27
+    versionCode = 1
+    versionName = "0.1"
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        buildToolsVersion rootProject.buildToolsVersion
+        applicationId rootProject.applicationId
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            versionNameSuffix "-PROD"
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "TwitterTestApp-${variant.buildType.name}_v${variant.versionName}.apk"
+        }
+    }
+}

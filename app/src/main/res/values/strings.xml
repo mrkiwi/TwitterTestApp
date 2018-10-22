@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Twitter Test App</string>
+
+    <string name="title_navigation">Let\'s test Twitter APIs</string>
+    <string name="title_search">Search</string>
+    <string name="title_nearby">Nearby</string>
+    <string name="title_favorites">Favorites</string>
+
+    <string name="dialog_location_text">Please, turn on location service to continue.</string>
+    <string name="dialog_location_button_exit">Exit</string>
+    <string name="dialog_location_button_retry">Retry</string>
+    <string name="dialog_location_button_cancel">Cancel</string>
+
+    <string name="message_favorite_added">Favorite added</string>
+    <string name="message_favorite_removed">Favorite removed</string>
+    <string name="message_location_permission_denied">Location permission denied</string>
+
+    <string name="hint_text_search">Type something</string>
+    <string name="hint_image_desc">Description</string>
+
+    <string name="holder_text_empty">No Tweets</string>
+</resources>
